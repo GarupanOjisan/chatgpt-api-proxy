@@ -13,6 +13,7 @@ func main() {
 	http.HandleFunc("/", handleRequest)
 
 	port := os.Getenv("PORT")
+	log.Printf("Listening on port %s", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
 	}
